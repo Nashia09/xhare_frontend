@@ -8,7 +8,7 @@ import { EncryptedObject } from '@mysten/seal';
 import { createWalrusClientFromSuiClient, getWalrusBlob } from './walrusUploadService';
 const extToMime=(name:string)=>{const e=name.split('.').pop()?.toLowerCase();switch(e){case 'png':return 'image/png';case 'jpg':case 'jpeg':return 'image/jpeg';case 'gif':return 'image/gif';case 'webp':return 'image/webp';case 'svg':return 'image/svg+xml';case 'pdf':return 'application/pdf';case 'mp4':return 'video/mp4';case 'mov':return 'video/quicktime';case 'zip':return 'application/zip';default:return undefined;}};
 const magicToMime=(data:Uint8Array)=>{if(data.length>=8&&data[0]===0x89&&data[1]===0x50&&data[2]===0x4E&&data[3]===0x47&&data[4]===0x0D&&data[5]===0x0A&&data[6]===0x1A&&data[7]===0x0A)return 'image/png';if(data.length>=3&&data[0]===0xFF&&data[1]===0xD8&&data[2]===0xFF)return 'image/jpeg';if(data.length>=3&&data[0]===0x47&&data[1]===0x49&&data[2]===0x46)return 'image/gif';if(data.length>=4&&data[0]===0x25&&data[1]===0x50&&data[2]===0x44&&data[3]===0x46)return 'application/pdf';if(data.length>=12&&String.fromCharCode(...data.slice(8,12))==='WEBP')return 'image/webp';if(data.length>=8&&String.fromCharCode(...data.slice(4,8))==='ftyp')return 'video/mp4';return undefined;};
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://xhare-backend.onrender.com';
 
 export interface FileMetadata {
   cid: string;

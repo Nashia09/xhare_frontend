@@ -6,7 +6,7 @@
 import { isValidSuiAddress } from '@mysten/sui/utils';
 import { fileService } from './fileService';
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://xhare-backend.onrender.com';
 
 export interface AccessControlRule {
   conditionType: 'email' | 'wallet' | 'time' | 'hybrid';
