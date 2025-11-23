@@ -7,7 +7,7 @@ export const PICOVOICE_CONFIG = {
   ACCESS_KEY: 'n1VU88e5YMOmG6J0Ro8PD8nfmb30fTuA4U1NM560r1fCnZqXTKNX5g==',
   
   // Wake word configuration
-  WAKE_WORD: 'Hey SuiSend', // You can customize this
+  WAKE_WORD: 'Hey Xhare', // You can customize this
   
   // File command intents
   FILE_COMMANDS: {
@@ -20,7 +20,7 @@ export const PICOVOICE_CONFIG = {
   
   // Voice feedback messages
   FEEDBACK_MESSAGES: {
-    WAKE_WORD_DETECTED: 'SuiSend Voice command activated. What would you like to do?',
+    WAKE_WORD_DETECTED: 'Xhare Voice command activated. What would you like to do?',
     FILE_COMMAND_DETECTED: 'Opening file browser...',
     COMMAND_NOT_UNDERSTOOD: 'Sorry, I didn\'t understand that command. Try saying "attach file" or "upload document".',
     MICROPHONE_ERROR: 'Unable to access microphone. Please check permissions.',

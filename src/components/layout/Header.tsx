@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="w-6 h-6 bg-black flex items-center justify-center">
           <Play className="w-3 h-3 text-white fill-white" />
         </div>
-        <span className="text-xl font-medium text-black">Sui Send</span>
+        <span className="text-xl font-medium text-black">Xhare</span>
       </div>
 
       <div className="flex items-center gap-4">
