@@ -77,9 +77,7 @@ class FileService {
     }
     return out;
   }
-  private safeStringify(value: any): string {
-    return JSON.stringify(this.toPlainJSON(value));
-  }
+  
   private getAuthHeaders(token: string | null): Record<string, string> {
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
@@ -529,6 +527,15 @@ class FileService {
         const client = createWalrusClientFromSuiClient();
         const walrusBlob = await getWalrusBlob(client as any, file.cid);
         if (walrusBlob) {
+          // Declare authToken for this scope
+          let authToken: string | undefined;
+          // Set authToken when not in test mode
+          if (!useTestMode && walletAddress) {
+            const auth = await this.authenticateWallet(walletAddress);
+            if (auth.success && auth.token) {
+              authToken = auth.token;
+            }
+          }
           let bytes: Uint8Array | null = null;
           try {
             if (walrusBlob instanceof Uint8Array) {

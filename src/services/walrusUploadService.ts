@@ -1,5 +1,5 @@
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { walrus, WalrusClient } from '@mysten/walrus';
+import { getFullnodeUrl } from '@mysten/sui/client';
+import { WalrusClient } from '@mysten/walrus';
 import { WalrusFile } from '@mysten/walrus';
 
 /**
@@ -285,9 +285,9 @@ export const uploadEncryptedBytes = async (
   return uploadedFile;
 };
 
-// Helper to create Walrus client from existing SuiClient
-export const createWalrusClientFromSuiClient = (suiClient?: any) => {
-  // Use WalrusClient directly instead of extending SuiClient
+// Helper to create Walrus client
+export const createWalrusClientFromSuiClient = () => {
+  // Use WalrusClient directly
   return createWalrusClient();
 };
 
